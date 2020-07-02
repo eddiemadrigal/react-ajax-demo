@@ -2,30 +2,11 @@ import React, {useEffect} from 'react';
 import './App.css';
 import './Solar.css';
 
-const jsonData = require('../data/MyData.json');
-
-const Solar = ({ setSolar, setWind }) => {
-
-    useEffect(() => {
-        getLocationOptions();
-        getCostOptions();
-        getContractorOptions();
-    }, [])
-
-    function handleSolarOption() {
-        setWind(false);
-        setSolar(true);
-    }
-
-    function handleWindOption() {
-        setSolar(false);
-        setWind(true);
-    }
+const Solar = ({ setSolar, setWind, jsonData }) => {
 
     const locationMax = jsonData.WIND.LOCATION.length;
     const costMax = jsonData.WIND.COSTS.length;
     const contractorMax = jsonData.WIND.CONTRACTORS.length;
-
 
     function getLocationOptions() {
         let output = "";
@@ -61,6 +42,24 @@ const Solar = ({ setSolar, setWind }) => {
             }
         }
         document.getElementById('contractorSelect').innerHTML = output;
+    }
+
+    useEffect(() => {
+        getLocationOptions();
+        getCostOptions();
+        getContractorOptions();
+    })
+
+    
+
+    function handleSolarOption() {
+        setWind(false);
+        setSolar(true);
+    }
+
+    function handleWindOption() {
+        setSolar(false);
+        setWind(true);
     }
     
     return (

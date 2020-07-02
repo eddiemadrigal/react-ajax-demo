@@ -2,25 +2,7 @@ import React, {useEffect} from 'react';
 import './App.css';
 import './Solar.css';
 
-const jsonData = require('../data/MyData.json');
-
-const Solar = ({ setSolar, setWind }) => {
-
-    useEffect(() => {
-        getRoofOptions();
-        getCostOptions();
-        getContractorOptions();
-    }, [])
-
-    function handleSolarOption() {
-        setWind(false);
-        setSolar(true);
-    }
-
-    function handleWindOption() {
-        setSolar(false);
-        setWind(true);
-    }
+const Solar = ({ setSolar, setWind, jsonData }) => {
 
     const roofMax = jsonData.SOLAR.ROOF.length;
     const costMax = jsonData.SOLAR.COSTS.length;
@@ -49,7 +31,7 @@ const Solar = ({ setSolar, setWind }) => {
         }
         document.getElementById('costSelect').innerHTML = output;
     }
-
+    
     function getContractorOptions() {
         let output = "";
         for (let i = 0; i < contractorMax; i++) {
@@ -60,6 +42,22 @@ const Solar = ({ setSolar, setWind }) => {
             }
         }
         document.getElementById('contractorSelect').innerHTML = output;
+    }
+
+    useEffect(() => {        
+        getRoofOptions();        
+        getCostOptions();        
+        getContractorOptions();
+    })
+
+    function handleSolarOption() {
+        setWind(false);
+        setSolar(true);
+    }
+
+    function handleWindOption() {
+        setSolar(false);
+        setWind(true);
     }
     
     return (
