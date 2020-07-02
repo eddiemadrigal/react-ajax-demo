@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+}
+
+h4 {
+  color: white;
+}
+
+h1 {
+  font-size: 32pt;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: gold;
+}

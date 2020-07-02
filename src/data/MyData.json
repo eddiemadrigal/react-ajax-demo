@@ -1,0 +1,12 @@
+{
+    "SOLAR": {
+        "ROOF": ["Roof Size", "Roof Warranty", "Roof Slopes Direction", "Roof Weight Support"],
+        "COSTS": ["Fees", "Electricity Credit?", "Rebates", "Solar Insurance", "Maintenance", "Warranties"],
+        "CONTRACTORS": ["Valley Solar, Inc.", "Aztec Solar, Inc.", "Sacramento Solar Company", "Epic Energy"]
+    },
+    "WIND": {
+        "LOCATION": ["Wind Levels", "Zoning Requirements"],
+        "COSTS": ["Incentives", "Turbine Size", "Tower Size"],
+        "CONTRACTORS": ["Northwind Group", "Barnum & Celillo Electric, Inc", "CalWEA", "Tim Jones Roofing"]
+    }
+}
