@@ -12,11 +12,16 @@ function App() {
 
   useEffect(() => {
     const fetchData = () => {
-      fetch('../data/MyData.json')
-          .then(res => res.json())
-          .then(data => {
-            setJsonData(data);
-          })
+      const xmlhttp = new XMLHttpRequest();
+      const url = "../data/MyData.json";
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              let myObj = JSON.parse(this.responseText);
+              setJsonData(myObj);
+          }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
     }
     fetchData();
   }, []);
