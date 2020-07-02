@@ -15,7 +15,7 @@ function App() {
       const xmlhttp = new XMLHttpRequest();
       const url = "../data/MyData.json";
       xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
+          if (this.readyState === 4 && this.status === 200) {
               let myObj = JSON.parse(this.responseText);
               setJsonData(myObj);
           }
